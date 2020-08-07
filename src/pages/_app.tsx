@@ -1,10 +1,9 @@
 import React from "react";
 import App from "next/app";
 import Head from "next/head";
+import Store from "../store/store";
 
-import "../styles/index.scss";
-
-import { Header, Footer } from "../components";
+const store = new Store();
 
 class MyApp extends App {
   render() {
@@ -16,9 +15,7 @@ class MyApp extends App {
           <meta charSet="utf-8" />
         </Head>
 
-        <Header />
-        <Component {...pageProps} />
-        <Footer />
+        <Component {...pageProps} store={store} />
       </>
     );
   }
