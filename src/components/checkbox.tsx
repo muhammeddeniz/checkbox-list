@@ -24,6 +24,7 @@ const CheckBox: React.FC<any> = ({ children, store }) => {
 
     cursor: pointer;
   `;
+
   const CheckBoxContainer = styled.div`
     margin: 6px 10px;
     min-width: 200px;
