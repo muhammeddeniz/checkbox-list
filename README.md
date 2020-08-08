@@ -9,7 +9,6 @@
     <br /> 
 </p>
 
-
 ![Test Image 1](./public/views/view.png)
 
 ## Development
