@@ -9,6 +9,20 @@ interface IProps {
   checkboxs?: Array<string>;
 }
 
+const InputComponent = styled.input`
+  padding: 5px;
+
+  border-radius: 6px;
+  border: 1px solid #ccc;
+
+  box-shadow: 2px 3px 6px #ccc;
+  outline: none;
+
+  &:focus {
+    box-shadow: 4px 3px 6px #ccc;
+  }
+`;
+
 const SearchWord = (search: string, word: string, store: any) => {
   for (let i = 0; i < search.length; i++) {
     if (search[i] != word[i]) {
@@ -35,6 +49,7 @@ const Input: React.FC<any> = ({ checkboxs = ["deneme"], store }) => {
   const Close = styled.div`
     position: absolute;
     right: 15px;
+    top: 3px;
   `;
 
   return (
@@ -46,13 +61,13 @@ const Input: React.FC<any> = ({ checkboxs = ["deneme"], store }) => {
           position: "relative",
         }}
       >
-        <input
+        <InputComponent
           style={{ paddingRight: 30 }}
           value={search}
           onChange={(e) => {
             setSearch(e.target.value);
           }}
-        ></input>
+        ></InputComponent>
         <Close onClick={() => setSearch("")}>
           <X></X>
         </Close>
